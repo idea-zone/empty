@@ -1,0 +1,194 @@
+
+:root {
+    /* 主题色2 */
+    --m-theme1-background: #8064a9;
+    --m-theme2-background: #2aa899;
+
+    /* 段落设置 */
+    --m-para-line-height: 1.625;
+    --m-para-padding: 4px;
+    --m-para-margin: 2px 0;
+    --m-para-text-color: var(--m-d-fc);   /* --b3-theme-on-background */
+    --m-para-text-bg-color: var(--m-d-bc);   /* --b3-theme-background */
+
+    /* 行内代码设置 */
+    --m-inline-code-color:#2aa899;
+    --m-inline-code-bg-color:white;
+    --m-inline-code-border:rgb(128, 128, 128) solid 1px;
+    --m-inline-code-radius: 6px;  /*--b3-border-radius*/
+    --m-inline-code-font:"";
+
+    /* 下划线 */
+    --m-inline-u-border-bottom: 1px solid var(--m-theme2-background);  
+
+    /* 粗体 */
+    --m-inline-strong-font : var(--m-v-f-w-bd) 1em var(--m-v-f-fm-bd-local);  /* --b3-protyle-inline-strong-color */
+    --m-inline-strong-color :.var(--m-d-fc);  /* --b3-protyle-inline-strong-color */
+
+    /* 斜体 */
+    --m-inline-em-color :var(--m-m-d-fc);  /* --b3-protyle-inline-em-color */
+
+    /* 删除线 */
+    --m-inline-s-color :var(--m-m-d-fc);  /* --b3-protyle-inline-s-color */
+
+   /* 高亮 */
+   --m-inline-mark-color :var(--m-d-fc);  /* --b3-protyle-inline-mark-color */
+   --m-inline-mark-bg-color: var(--m-mark-bg);  /* --b3-protyle-inline-mark-background */
+
+   /* 键盘 */
+   --m-inline-kbd-color: var(--m-d-bc);  /* --b3-theme-on-surface */
+   --m-inline-kbd-bg-color: var(--m-key-bg);   /* --b3-theme-surface */  
+   --m-inline-kbd-font: var(--m-v-f-w-bd) .875em var(--m-v-f-fm-key-local);
+   border-radius: var(--m-v-r-s-small);
+
+   /* 标签 */
+   --m-inline-tag-color: var(--m-d-fc);  /* --b3-protyle-inline-tag-color */
+   --m-v-tag-bgcolor: var(--m-tag-bg); 
+   /* --m-v-tag-icon: var(--m-theme1-background);  */
+   --m-v-tag-icon: var(--m-d-bc);
+}
+
+html[data-theme-mode="dark"]{
+
+    --m-theme1-background: #8064a9;
+    --m-theme2-background: #2aa899;
+    --m-inline-code-color:#2aa899;
+    --m-inline-code-bg-color: #222426;
+    --m-inline-code-border:#a9adaf solid 1px;
+
+}
+
+/* 段落 */
+.b3-typography li>p, .b3-typography>p, .b3-typography blockquote>p, .b3-typography [data-node-id], .protyle-wysiwyg li>p, .protyle-wysiwyg>p, .protyle-wysiwyg blockquote>p, .protyle-wysiwyg [data-node-id] {
+    line-height: var(--m-para-line-height);
+    padding: var(--m-para-padding);
+    margin: var(--m-para-margin);
+    border-radius: var(--m-inline-code-radius);
+    color:  var( --m-para-text-color);
+}
+
+/* 行内标签*/
+.protyle-wysiwyg[data-readonly=false] span[data-type~=inline-math]{
+    cursor: pointer;  /* 只读摸下下鼠标样式 */ 
+}
+.b3-typography span[data-type~=inline-math], .protyle-wysiwyg span[data-type~=inline-math] {
+    user-select: text;
+    display: inline;
+    padding: 1px 5px;
+    font-weight: bold;
+    transition: var(--b3-transition);
+    border: 1px dotted var(--m-theme2-background);
+}
+.b3-typography span[data-type~=inline-math]::before, .protyle-wysiwyg span[data-type~=inline-math]::before{
+    content: "$";
+    color: rgba(var(--m-theme2-alt),0.8);
+    padding-right: 3px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* 标签 */
+.protyle-wysiwyg [data-node-id] span[data-type~=tag] {
+    /* border-bottom: 1px solid; */
+    color: var(--m-inline-tag-color);
+    background-color: var(--m-v-tag-bgcolor);
+    margin: 0px 0px;
+    padding: 1px 5px;
+    border-radius: 5px;
+
+    transition: var(--b3-transition);
+    cursor: pointer;
+    border-bottom: none;
+
+    font-weight: bold;
+    border-left: 1px solid var(--m-theme1-background);
+    border-right: 1px solid var(--m-theme1-background);
+}
+.protyle-wysiwyg [data-node-id] span[data-type~=tag]::before{
+    content: "#";
+    color: var(--m-v-tag-icon);
+    /* border-right: 1px dotted var(--m-v-tag-icon); */
+    padding-right: 3px;
+    font-weight: bold;
+}
+
+/* 键盘 */
+.b3-typography kbd, .b3-typography span[data-type~=kbd], .protyle-wysiwyg kbd, .protyle-wysiwyg span[data-type~=kbd] {
+    font: var(--m-inline-kbd-font);
+    border-radius: var(--m-v-r-s-small);
+    margin: 0;
+    padding: 0 4px;
+    color: var( --m-inline-kbd-color);
+    border: solid 2px var(--m-key-shadow);
+    border-left-color: var(--m-key-reflect);
+    border-top-color: var(--m-key-reflect);
+    background: var(--m-inline-kbd-bg-color);
+    box-shadow: 0 0 0 1px var(--m-key-shadow);
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+/* 高亮 */
+.b3-typography mark, .b3-typography span[data-type~=mark], .protyle-wysiwyg mark, .protyle-wysiwyg span[data-type~=mark] {
+   
+    /* background-color: var(--m-inline-mark-bg-color); */
+    color: var(--m-inline-mark-color);
+    box-shadow: 0-.9em 0 0 var(--m-mark-bg) inset !important;
+    background: 0 0;
+    font: var(--m-v-f-w-bd) 1em var(--m-v-f-fm-bd-local);
+    line-height: 1;
+}
+
+/* 上标*/
+.b3-typography span[data-type~=sup],.protyle-wysiwyg span[data-type~=sup]{
+    top: -0.5em;
+    position: relative;
+    vertical-align: super;
+    font-size: smaller;
+    opacity: .6;
+}
+
+/* 下标 */
+ .b3-typography span[data-type~=sub], .protyle-wysiwyg span[data-type~=sub] {
+    position: relative;
+    /* line-height: 0; */
+    vertical-align: sub;
+    font-size: smaller;
+    opacity: .6;
+}
+
+/* 删除线 */
+.b3-typography s, .b3-typography span[data-type~=s], .protyle-wysiwyg s, .protyle-wysiwyg span[data-type~=s] {
+    color: var(--m-inline-s-color);
+    text-decoration: line-through;
+    text-decoration-color: var(--m-theme2-background) !important;
+}
+
+/* 斜体 */
+.b3-typography em, .b3-typography span[data-type~=em], .protyle-wysiwyg em, .protyle-wysiwyg span[data-type~=em] {
+    font-style: italic;
+    color: var(--m-inline-em-color);
+}
+
+/* 粗体 */
+.b3-typography strong, .b3-typography span[data-type~=strong], .protyle-wysiwyg strong, .protyle-wysiwyg span[data-type~=strong] {
+    font: var(--m-inline-strong-font);
+    color: var(--m-inline-strong-color);
+}
+
+/* 下划线 */
+.b3-typography u, .b3-typography span[data-type~=u], .protyle-wysiwyg u, .protyle-wysiwyg span[data-type~=u] {
+    border-bottom: var(--m-inline-u-border-bottom);
+    /* 下面的目的是想让下划线左右多出一点 */
+    padding-right: 6px;  
+    padding-left: 4px;
+
+}
+
+/* 行内代码(行级代码) 样式 */
+.fn__code, .b3-typography code:not(.hljs), .b3-typography span[data-type~=code], .protyle-wysiwyg code:not(.hljs), .protyle-wysiwyg span[data-type~=code]{
+    color : var(--m-inline-code-color);
+    background: var(--m-inline-code-bg-color);
+    border: var(--m-inline-code-border);
+    border-radius: var(--m-inline-code-radius);
+}

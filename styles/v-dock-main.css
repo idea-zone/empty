@@ -1,0 +1,78 @@
+:root{
+    
+    /* 从 vlook 获取的变量 */
+
+    --m-v-r-s-small: 4px;
+
+    --m-d-fc: #222626;
+    --m-d-bc: #FCF9F2;
+    --m-d-bi: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4AQMAAAADqqSRAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMACHhIRQoAAAAlSURBVDjLYwABRgQxyh/l05T/HxUMuHtG+SOLP5r+RvmDKP0BALD8LjNR4HGxAAAAAElFTkSuQmCC");
+
+    --m-theme1-alt: 128, 100, 169;
+    --m-theme2-alt: 42, 168, 153;
+
+
+    --m-v-f-w-text: normal;
+    --m-v-f-w-bd: bold;
+
+    --m-mark-bg: rgba(var(--m-theme2-alt),0.4);
+    --m-tag-bg:  rgba(var(--m-theme1-alt),0.4);
+
+    --m-key-bg: #484a4c;
+    --m-key-reflect: #7a7d80;
+    --m-key-shadow: #000000;
+
+    --m-v-f-fm-text: "color-emoji", VLOOK Digital local, -apple-system, Roboto, 
+    "SF Pro Text", "SF Pro Display", "PingFang SC", "PingFang TC", "PingFang HK", 
+    "Segoe UI", SegoeUI, "Microsoft YaHei", "微软雅黑", "Heiti SC", "黑体-简",
+    SimHei, "黑体", "Microsoft JhengHei", "微軟正黑體", "Heiti SC", "黑体-简",
+    SimHei, "黑体";
+
+    --m-v-f-fm-bd-local:"color-emoji", VLOOK Digital local, -apple-system, Roboto,
+    "SF Pro Text", "SF Pro Display", "PingFang SC", "PingFang TC", "PingFang HK",
+    "Segoe UI", SegoeUI, "Microsoft YaHei", "微软雅黑", "Heiti SC", "黑体-简",
+    SimHei, "黑体", "Microsoft JhengHei", "微軟正黑體", "Heiti SC", "黑体-简",
+    SimHei, "黑体";
+
+    --m-v-f-fm-key-local:-apple-system, Roboto, "SF Pro Text", "SF Pro Display",
+    "PingFang SC", "PingFang TC", "PingFang HK", "Segoe UI", SegoeUI,
+    "Microsoft YaHei", "微软雅黑", "Heiti SC", "黑体-简", SimHei, "黑体",
+    "Microsoft JhengHei", "微軟正黑體", "Heiti SC", "黑体-简", SimHei, "黑体";
+
+}
+
+
+html[data-theme-mode="dark"]{
+
+    --m-d-bi: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4AQMAAAADqqSRAAAABlBMVEUAAAD///+l2Z/dAAAAAnRSTlMAD+Ys0KkAAAAlSURBVDjLYwABRgQxyh/l05T/HxUMuHtG+SOLP5r+RvmDKP0BALD8LjNR4HGxAAAAAElFTkSuQmCC");
+
+    --m-d-fc: #dbdddf;
+    --m-d-bc: #222426;
+    --m-theme1-alt: 128, 100, 169;
+    --m-theme2-alt: 42, 168, 153;
+    --m-key-bg: #d8dadc;
+    --m-key-reflect: #ffffff;
+    --m-key-shadow: #a2a7ac;
+
+    --m-mark-bg: rgba(var(--m-theme2-alt),0.6);
+    --m-tag-bg:  rgba(var(--m-theme1-alt),0.6);
+}
+
+
+ /* .layout__center, 中间整个区域，排除侧边栏、左侧文档树、分隔线外*/
+.layout-tab-bar, /*文档选项卡*/
+.protyle  /* 标题区域(.protyle-top)，编辑区域(.protyle-wysiwyg,)和右侧的滚动条*/
+,.protyle-breadcrumb  /*面包屑*/
+{
+
+    background: var(--m-d-bc) var(--m-d-bi) !important;
+    caret-color: var(--m-theme2-background);  /* 闪烁的光标的颜色 */
+    background-color:  var(--m-para-text-bg-color); 
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 仅内容编辑区域（不含标题栏） */
+.protyle-wysiwyg,.protyle-wysiwyg--attr{
+    color: var(--m-d-fc) ;
+    font: var(--m-v-f-w-text) 1em / 1.5 var(--m-v-f-fm-text);
+}
