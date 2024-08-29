@@ -5,6 +5,7 @@
 
 /* 编辑器页面布局 */
 @import url(./styles/v-dock-main.css);
+@import url(./styles/v-dock-file-tree.css.css);
 
 /* 基础内容块配置 */
 @import url(./styles/v-block-inline-style.css);

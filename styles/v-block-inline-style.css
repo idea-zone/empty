@@ -4,6 +4,9 @@
     --m-theme1-background: #8064a9;
     --m-theme2-background: #2aa899;
 
+    --m-theme1-on-background: #FFFFFF;
+    --m-theme2-on-background: #FFFFFF;
+
     /* 段落设置 */
     --m-para-line-height: 1.625;
     --m-para-padding: 4px;
@@ -52,6 +55,10 @@ html[data-theme-mode="dark"]{
 
     --m-theme1-background: #8064a9;
     --m-theme2-background: #2aa899;
+
+    --m-theme1-on-background: #FFFFFF;
+    --m-theme2-on-background: #FFFFFF;
+
     --m-inline-code-color:#2aa899;
     --m-inline-code-bg-color: #222426;
     --m-inline-code-border:#a9adaf solid 1px;
